@@ -28,7 +28,7 @@ This project analyzes earthquake data over the past 30 days, exploring magnitude
 ## Author
 Shipu Debnath  
 MS Student in Geography, Texas Tech University  
-[LinkedIn](https://linkedin.com/in/your-profile) | [Google Scholar](https://scholar.google.com/citations?user=your-id)
+[LinkedIn](https://linkedin.com/in/shipudebnath/) | [Google Scholar](https://scholar.google.com/citations?user=WyP6KUUAAAAJ&hl=en)
 
 ## License
 MIT License
