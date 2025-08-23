@@ -13,7 +13,7 @@ This project analyzes earthquake data over the past 30 days, exploring magnitude
 - Location: `/data/earthquakes.csv` (include file or link to source)
 
 ## Usage
-1. Clone the repository: `git clone https://github.com/your-username/earthquake-activity-analysis.git`
+1. Clone the repository: `git clone https://github.com/ShipuDebnath/earthquake-activity-analysis.git`
 2. Open R and set the working directory to the repo folder.
 3. Load data (e.g., `all_month <- read.csv("data/earthquakes.csv")`).
 4. Run the script: `source("scripts/earthquake_analysis.R")`
