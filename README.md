@@ -16,7 +16,7 @@ This project analyzes earthquake data over the past 30 days, exploring magnitude
 1. Clone the repository: `git clone https://github.com/ShipuDebnath/earthquake-activity-analysis.git`
 2. Open R and set the working directory to the repo folder.
 3. Load data (e.g., `all_month <- read.csv("data/earthquakes.csv")`).
-4. Run the script: `source("scripts/earthquake_analysis.R")`
+4. Run the script: `source("scripts/earthquake-activity-analysis.r")`
 5. Outputs:
    - Plots in `plots/` (e.g., magnitude histogram, maps)
    - Statistical results in `results/statistical_summary.txt`
