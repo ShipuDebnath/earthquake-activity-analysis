@@ -64,3 +64,4 @@ plot(st_geometry(statesCAK))
 tm_shape(statesCAK) + tm_polygons(col = "#f2fbd2") + tm_shape(CAKsf) + tm_bubbles(size = 0.1, col = "magnitude") + tm_layout(main.title = "Earthquakes in California and Alaska over the past 30 days", main.title.size = 1, legend.outside = TRUE)
 t.test(CAK$mag ~ factor(CAK$location))
 cohensD(CAK$mag ~ factor(CAK$location))
+
