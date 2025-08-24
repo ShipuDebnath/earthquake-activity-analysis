@@ -1,0 +1,36 @@
+library(tidyverse)
+library(tmap)
+library(tmaptools)
+library(forcats)
+library(wordcloud)
+library(sf)
+library(lsr)
+library(tidycensus)
+EQ = all_month[, c(1:6, 14)]
+EQ$Date = substr(EQ$time, 1, 10)
+EQ$Date = as.Date(EQ$Data, format = "%Y-%m-%d")
+EQ$time <- NULL
+EQ$magType = tolower(EQ$magType)
+EQ$magType = as.factor(EQ$magType)
+locl = str_split(EQ$place, ",", simplify = TRUE)
+locl = as.data.frame(locl)
+View(locl)
+locl$V2 = trimws(locl$V2)
+locl$V2[locl$V2 == "Aleutian Islands"] <- "Alaska"
+locl$V2[locl$V2 == "CA"] <- "California"
+EQ$location = locl$V2
+EQ$place <- NULL
+EQ$location = as.factor(EQ$location)
+View(EQ)
+summary(EQ)
+EQ = EQ[EQ$mag > 0, ]
+A = ggplot(EQ,aes(x = mag)) + geom_histogram(col="#af33ff", fill = "#af33ff")
+A
+A + scale_x_continuous(breaks = seq(from = 0, to = 7, by = 0.5)) + labs(title = "Earthquake Magnitudes for the past 30 days") + labs(x="magnitude", y="Number") + theme_light()
+D30 = aggregate(mag ~ Date, data = EQ, mean)
+B = ggplot(data = D30, aes(x = Date, y = mag)) + geom_line() + geom_point()
+B
+B + labs(title = "Average Earthquake Activity over the past 30 days") + labs(y = "magnitude") + theme_light()
+PMag = aggregate(mag ~ location, data = EQ, mean)
+GT47 = PMag[PMag$mag > 4.7, ]
+
